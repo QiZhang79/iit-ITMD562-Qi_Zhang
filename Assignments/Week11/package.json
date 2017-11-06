@@ -1,0 +1,11 @@
+{
+  "name": "week10",
+  "version": "0.0.1",
+  "description": "Use GET/PUT/POST/DELETE (CRUD operation) to deal with reminders",
+  "main": "server.js",
+  "author": "QI ZHANG",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}

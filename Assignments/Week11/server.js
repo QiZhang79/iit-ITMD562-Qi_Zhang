@@ -2,13 +2,17 @@ const express = require('express'),
 	  http = require('http'),
 	  bodyParser = require('body-parser'),
 	  app = express();
+    router = express.Router();
 
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
 const users = [ ];
 
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, '../public', 'index.html')))
+
 //1. GET /users/{userId}
-app.get('/users/:userId', function(req, res){  //BUG is HERE! "./users/:userId" is wrong!
+app.get('/users/:userId', function(req, res){  
 	var userID = req.params.userId;
 
 	if(!users[userID - 1]) {
@@ -48,12 +52,13 @@ app.get('/users/:userId/reminders/:reminderId', function (req, res) {
 
 //4. POST /users
 app.post('/users', function (req, res) {
-  var newUserId = {'userId' : users.length + 1};
+  var newUserId = users.length + 1;
   var newUser = req.body; //Contains key-value pairs of data submitted in the request body. By default, it is undefined, and is populated when you use body-parsing middleware such as body-parser and multer.
   newUser.reminders = [ ];
-
+  newUser['userId'] = newUserId;
+  console.log(newUser)
   users.push(newUser);
-  res.status(200).send(newUserId);
+  res.status(200).send(newUser);
 });
 
 //5. POST /users/{userId}/reminders
@@ -98,6 +103,7 @@ app.delete('/users/:userId/reminders', function (req, res) {
     res.status(204).send('204 No content upon success');
   }
 });
+
 
 //8. Delete /users/:userId/reminders/:reminderId
 app.delete('/users/:userId/reminders/:reminderId', function (req, res) {

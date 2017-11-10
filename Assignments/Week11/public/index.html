@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>Reminder Application</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; img-src * data: 'unsafe-inline'; connect-src * 'unsafe-inline'; frame-src *;" /> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <style>
+    body { padding:40px 80px 40px 80px; }
+  </style>
+
+</head>
+
+<body>
+  <!-- HEADER -->
+  <div class="starter-template">
+	  <h1 class="">Reminder Application</h1>
+    <h4>ITMD562: Qi Zhang</h4>
+  </div>
+
+  <!-- ADD USER -->
+  <div class="container">
+	  <span class="label label-primary">Add User:</span>
+  </div>
+
+  <div class="form-inline container" id="addUser">
+      <label class="sr-only" for="inlineFormInput">Name</label>
+  	  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="nameInput" 
+        placeholder="Input username." name='name'>
+  	  <label class="sr-only" for="inlineFormInput">Email</label>
+  	  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="emailInput" 
+        placeholder="Input email."> 
+      <button  class="btn btn-primary" id="addUserBtn">Submit</button>
+  </div>
+  <div id="userContainer"></div>
+
+  <!-- GET USER -->
+  <div class="container">
+    <span class="label label-primary">Search User:</span>
+  </div>
+
+  <form class="form-inline container" id="getUser">
+      <label class="sr-only" for="inlineFormInput">UserId</label>
+      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="userIdInput" placeholder="Input UserId.">
+      <button type="submit" class="btn btn-primary" id="getUserBtn">Search</button>
+  </form>
+  <div id="searchedUser"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js "></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js "></script>
+<script src="app.js"></script>
+</body>

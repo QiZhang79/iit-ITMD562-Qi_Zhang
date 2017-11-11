@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 const users = [ ];
-
+//Set index.html default page
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, '../public', 'index.html')))
 
 //1. GET /users/{userId}
@@ -64,17 +64,18 @@ app.post('/users', function (req, res) {
 //5. POST /users/{userId}/reminders
 app.post('/users/:userId/reminders', function(req,res){
 	var userID = req.params.userId,
-	    newReminderID = {'reminderId' : users[userID - 1].reminders.length + 1}, //? users.length + 1 or users.length;
-	    createdTime = new Date();
+	    newReminderID = users[userID - 1].reminders.length + 1;
+	    // createdTime = new Date();
 
 	if(!users[userID - 1]){
 		res.status(404).send("Not found.");
 	} else {
 		var newRemind = req.body;
-		newRemind.id = newReminderID.reminderId;
-		newRemind.reminder.created = createdTime;
+    newRemind['reminderId'] = newReminderID;
+    console.log(newRemind);
+		// newRemind.reminder.created = createdTime;
 		users[userID - 1].reminders.push(newRemind);
-		res.status(200).send(newReminderID);
+		res.status(200).send(newRemind);
 	}
 });
 

@@ -31,25 +31,111 @@
         placeholder="Input username." name='name'>
   	  <label class="sr-only" for="inlineFormInput">Email</label>
   	  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="emailInput" 
-        placeholder="Input email."> 
-      <button  class="btn btn-primary" id="addUserBtn">Submit</button>
+        placeholder="Input email." name="email"> 
+      <button  class="btn btn-primary" id="addUserBtn">Add</button>
   </div>
   <div id="userContainer"></div>
 
-  <!-- GET USER -->
+  <!-- GET USER BY USERID -->
   <div class="container">
     <span class="label label-primary">Search User:</span>
   </div>
 
-  <form class="form-inline container" id="getUser">
+  <div class="form-inline container" id="getUser">
       <label class="sr-only" for="inlineFormInput">UserId</label>
-      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="userIdInput" placeholder="Input UserId.">
+      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="userIdInput" placeholder="Input UserId." name="getUserId">
       <button type="submit" class="btn btn-primary" id="getUserBtn">Search</button>
-  </form>
+  </div>
   <div id="searchedUser"></div>
+
+  <!-- DELETE USER BY USERID-->
+  <div class="container">
+    <span class="label label-primary">Delete User:</span>
+  </div>
+
+  <div class="form-inline container" id="deleteUser">
+    <label class="sr-only" for="inlineFormInput">UserId</label>
+    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="delUserIdInput" placeholder="Input UserId." name="delUserId">
+    <button type="submit" class="btn btn-primary" id="delUserBtn">Delete</button>
+  </div>
+  <div id="deletedUser"></div>
+
+  <!-- ADD REMINDER -->
+  <div class="container">
+    <span class="label label-primary">Add Reminder:</span>
+  </div>
+
+  <div class="form-inline container" id="addReminder">
+      <label class="sr-only" for="inlineFormInput">UserId</label>
+      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="addReminUserInput" 
+        placeholder="Input UserId." >
+      <label class="sr-only" for="inlineFormInput">Title</label>
+      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="titInput" 
+        placeholder="Input Title." > 
+      <label class="sr-only" for="inlineFormInput">Description</label>
+      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="descInput" 
+        placeholder="Input Description." > 
+      <button  class="btn btn-primary" id="addReminBtn">Add</button>
+  </div>
+  <div id="reminContainer"></div>
+
+  <!-- GET ALL REMINDERS -->
+  <div class="container">
+    <span class="label label-primary">Get All Reminders:</span>
+  </div>
+
+  <div class="form-inline container" id="getAllReminders">
+      <label class="sr-only" for="inlineFormInput">UserId</label>
+      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="getAllReminUserInput" 
+        placeholder="Input UserId." >
+      <button  class="btn btn-primary" id="getAllBtn">Search</button>
+  </div>
+  <div id="allContainer"></div>
+
+  <!-- GET REMINDER BY USERID AND REMINDERID -->
+  <div class="container">
+    <span class="label label-primary">Search Reminder:</span>
+  </div>
+
+  <div class="form-inline container" id="getUser">
+      <label class="sr-only" for="inlineFormInput">UserId</label>
+      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="getReminUserIdInput" placeholder="Input UserId." >
+      <label class="sr-only" for="inlineFormInput">ReminderId</label>
+      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="getReminIdInput" placeholder="Input ReminderId." >
+      <button type="submit" class="btn btn-primary" id="getReminderBtn">Search</button>
+  </div>
+  <div id="searchedReminder"></div>
+
+  <!-- DELETE REMINDER BY REMINDERID -->
+  <div class="container">
+    <span class="label label-primary">Delete Reminder:</span>
+  </div>
+
+  <div class="form-inline container" id="deleteReminder">
+    <label class="sr-only" for="inlineFormInput">UserId</label>
+    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="delReminUserIdInput" placeholder="Input UserId." >
+    <label class="sr-only" for="inlineFormInput">ReminderId</label>
+    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="delReminIdInput" placeholder="Input ReminderId." >
+    <button type="submit" class="btn btn-primary" id="delReminderBtn">Delete</button>
+  </div>
+  <div id="deletedReminder"></div>
+
+  <!-- Delete ALL REMINDERS OF ONE USER -->
+  <div class="container">
+    <span class="label label-primary">Delete All Reminders:</span>
+  </div>
+
+  <div class="form-inline container" id="deleteAllReminders">
+    <label class="sr-only" for="inlineFormInput">UserId</label>
+    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="delAllReminUserIdInput" placeholder="Input UserId." >
+    <button type="submit" class="btn btn-primary" id="delAllReminderBtn">Delete</button>
+  </div>
+  <div id="deletedAll"></div>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js "></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js "></script>
 <script src="app.js"></script>
 </body>
+</html>

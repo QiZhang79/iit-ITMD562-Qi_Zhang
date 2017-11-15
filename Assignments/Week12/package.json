@@ -1,0 +1,17 @@
+{
+  "name": "week12",
+  "version": "1.0.0",
+  "description": "Use GET/PUT/POST/DELETE (CRUD operation) to deal with reminders",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "express": "^4.16.2"
+  }
+}

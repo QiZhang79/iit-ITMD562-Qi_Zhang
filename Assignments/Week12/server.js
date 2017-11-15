@@ -121,3 +121,5 @@ app.delete('/users/:userId/reminders/:reminderId', function (req, res) {
 app.listen(3000, function () {
   console.log('The reminder RESTful app is listening on port 3000');
 });
+
+module.exports = app;
